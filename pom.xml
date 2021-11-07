@@ -8,7 +8,7 @@
     <artifactId>taube</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <modules>
-        <module>taube-admin</module>
+        <module>taube-broker</module>
         <module>taube-client</module>
     </modules>
 
@@ -21,10 +21,14 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <project.build.encoding>UTF-8</project.build.encoding>
 
         <netty-all.version>4.1.42.Final</netty-all.version>
         <lombok.version>1.18.22</lombok.version>
         <jboss-marshalling.version>1.4.10.Final</jboss-marshalling.version>
+        <commons-lang3.version>3.11</commons-lang3.version>
+        <spring-boot.version>2.4.3</spring-boot.version>
 
         <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
@@ -53,25 +57,42 @@
 
     <dependencyManagement>
         <dependencies>
+
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
                 <version>${netty-all.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.jboss.marshalling</groupId>
                 <artifactId>jboss-marshalling</artifactId>
                 <version>${jboss-marshalling.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.jboss.marshalling</groupId>
                 <artifactId>jboss-marshalling-serial</artifactId>
                 <version>${jboss-marshalling.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>${spring-boot.version}</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
