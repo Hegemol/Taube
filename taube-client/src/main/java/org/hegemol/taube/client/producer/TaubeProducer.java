@@ -1,7 +1,7 @@
 package org.hegemol.taube.client.producer;
 
 import org.apache.commons.lang3.StringUtils;
-import org.hegemol.taube.client.common.enums.TaubeMessageStatusEnum;
+import org.hegemol.taube.common.enums.TaubeMessageStatusEnum;
 import org.hegemol.taube.client.common.model.Message;
 
 import java.util.Objects;

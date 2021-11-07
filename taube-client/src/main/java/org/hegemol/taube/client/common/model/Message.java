@@ -1,6 +1,6 @@
 package org.hegemol.taube.client.common.model;
 
-import org.hegemol.taube.client.common.enums.TaubeMessageStatusEnum;
+import org.hegemol.taube.common.enums.TaubeMessageStatusEnum;
 
 import java.io.Serializable;
 

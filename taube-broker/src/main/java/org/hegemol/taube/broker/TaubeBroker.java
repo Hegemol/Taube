@@ -1,11 +1,10 @@
 package org.hegemol.taube.broker;
 
 import org.hegemol.taube.broker.config.TaubeBrokerConfigurationProperty;
-import org.hegemol.taube.broker.utils.IpUtils;
+import org.hegemol.taube.common.utils.IpUtils;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
-
 import java.net.UnknownHostException;
 
 /**
