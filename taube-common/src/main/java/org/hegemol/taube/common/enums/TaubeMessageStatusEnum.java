@@ -1,4 +1,4 @@
-package org.hegemol.taube.client.common.enums;
+package org.hegemol.taube.common.enums;
 
 /**
  * 消息状态.

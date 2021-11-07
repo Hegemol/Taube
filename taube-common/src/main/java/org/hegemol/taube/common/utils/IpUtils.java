@@ -1,4 +1,4 @@
-package org.hegemol.taube.broker.utils;
+package org.hegemol.taube.common.utils;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
