@@ -1,6 +1,6 @@
 package org.hegemol.taube.client.common.model;
 
-import org.hegemol.taube.client.common.constants.TaubeMessageStatus;
+import org.hegemol.taube.client.common.enums.TaubeMessageStatusEnum;
 
 import java.io.Serializable;
 
@@ -21,7 +21,7 @@ public class Message implements Serializable {
     private String data;
 
     // 消费状态
-    private TaubeMessageStatus status;
+    private TaubeMessageStatusEnum status;
 
     public Message() {
     }
@@ -91,7 +91,7 @@ public class Message implements Serializable {
      *
      * @return the value of status
      */
-    public TaubeMessageStatus getStatus() {
+    public TaubeMessageStatusEnum getStatus() {
         return status;
     }
 
@@ -100,7 +100,7 @@ public class Message implements Serializable {
      *
      * @param status status
      */
-    public void setStatus(final TaubeMessageStatus status) {
+    public void setStatus(final TaubeMessageStatusEnum status) {
         this.status = status;
     }
 }
