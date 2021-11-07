@@ -3,4 +3,4 @@
  *
  * @author KevinClair
  **/
-package org.hegemol.taube.client.handle;
+package org.hegemol.taube.client.consumer.handle;

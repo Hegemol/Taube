@@ -1,4 +1,4 @@
-package org.hegemol.taube.client.annotation;
+package org.hegemol.taube.client.consumer.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Inherited;

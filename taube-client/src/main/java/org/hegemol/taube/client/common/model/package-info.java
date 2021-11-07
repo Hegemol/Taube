@@ -3,4 +3,4 @@
  *
  * @author KevinClair
  **/
-package org.hegemol.taube.common.model;
+package org.hegemol.taube.client.common.model;

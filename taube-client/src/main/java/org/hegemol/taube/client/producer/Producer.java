@@ -1,15 +1,13 @@
-package org.hegemol.taube.producer;
+package org.hegemol.taube.client.producer;
 
 import io.netty.bootstrap.Bootstrap;
-import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
-import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import org.hegemol.taube.common.utils.MarshallingCodeCFactory;
-import org.hegemol.taube.message.Message;
+import org.hegemol.taube.client.common.utils.MarshallingCodeCFactory;
+import org.hegemol.taube.client.message.Message;
 
 import java.net.InetSocketAddress;
 

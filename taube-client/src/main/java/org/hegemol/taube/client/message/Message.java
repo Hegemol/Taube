@@ -1,9 +1,8 @@
-package org.hegemol.taube.message;
+package org.hegemol.taube.client.message;
 
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * 消息实体
