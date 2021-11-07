@@ -4,12 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.hegemol</groupId>
+    <groupId>org.hegemol.taube</groupId>
     <artifactId>taube</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+
     <modules>
         <module>taube-broker</module>
         <module>taube-client</module>
+        <module>taube-common</module>
+        <module>taube-core</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -29,6 +32,7 @@
         <jboss-marshalling.version>1.4.10.Final</jboss-marshalling.version>
         <commons-lang3.version>3.11</commons-lang3.version>
         <spring-boot.version>2.4.3</spring-boot.version>
+        <kryo.version>4.0.2</kryo.version>
 
         <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
@@ -93,6 +97,19 @@
                 <artifactId>spring-boot-autoconfigure</artifactId>
                 <version>${spring-boot.version}</version>
                 <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.esotericsoftware</groupId>
+                <artifactId>kryo</artifactId>
+                <version>${kryo.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
