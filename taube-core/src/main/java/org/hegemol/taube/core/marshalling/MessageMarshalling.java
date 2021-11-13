@@ -1,6 +1,8 @@
 package org.hegemol.taube.core.marshalling;
 
 
+import org.hegemol.taube.common.model.MessageModel;
+
 /**
  * 消息编组和解组协议
  *
@@ -24,5 +26,5 @@ public interface MessageMarshalling {
      * @return {@link Object} // TODO 消息格式
      * @throws Exception
      */
-    Object unmarshalling(byte[] data) throws Exception;
+    MessageModel unmarshalling(byte[] data) throws Exception;
 }

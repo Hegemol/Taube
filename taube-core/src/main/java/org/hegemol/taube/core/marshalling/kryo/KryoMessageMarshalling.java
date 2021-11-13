@@ -4,6 +4,7 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
 import com.esotericsoftware.kryo.pool.KryoPool;
+import org.hegemol.taube.common.model.MessageModel;
 import org.hegemol.taube.core.marshalling.MessageMarshalling;
 
 import java.io.ByteArrayInputStream;
@@ -36,12 +37,12 @@ public class KryoMessageMarshalling implements MessageMarshalling {
     }
 
     @Override
-    public Object unmarshalling(final byte[] data) throws Exception {
+    public MessageModel unmarshalling(final byte[] data) throws Exception {
         Kryo kryo = pool.borrow();
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(data);
         Input in = new Input(byteArrayInputStream);
         try {
-            Object result = kryo.readObject(in, Object.class);
+            MessageModel result = kryo.readObject(in, MessageModel.class);
             in.close();
             return result;
         } catch (Exception ex) {
