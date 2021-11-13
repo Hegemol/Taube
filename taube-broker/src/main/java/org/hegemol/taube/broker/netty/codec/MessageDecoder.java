@@ -4,6 +4,7 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
 import lombok.extern.slf4j.Slf4j;
+import org.hegemol.taube.common.model.MessageModel;
 import org.hegemol.taube.core.marshalling.MessageMarshalling;
 import org.hegemol.taube.core.marshalling.kryo.KryoMessageMarshalling;
 
@@ -34,9 +35,8 @@ public class MessageDecoder extends ByteToMessageDecoder {
         }
         byte[] bytes = new byte[bytesSize];
         byteBuf.readBytes(bytes);
-        // TODO 定义broker的消息样式
         MessageMarshalling marshalling = new KryoMessageMarshalling();
-        final Object message = marshalling.unmarshalling(bytes);
+        final MessageModel message = marshalling.unmarshalling(bytes);
         list.add(message);
     }
 }
