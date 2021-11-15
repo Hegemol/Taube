@@ -17,7 +17,7 @@ import org.hegemol.taube.broker.config.TaubeBrokerConfigurationProperty;
 import org.hegemol.taube.broker.netty.codec.MessageDecoder;
 import org.hegemol.taube.broker.netty.codec.MessageEncoder;
 import org.hegemol.taube.common.constants.CommonConstants;
-import org.hegemol.taube.core.heartbeat.HeartBeatRequestHandler;
+import org.hegemol.taube.broker.netty.heartbeat.HeartBeatRequestHandler;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.stereotype.Component;
 
