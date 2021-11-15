@@ -1,5 +1,7 @@
 package org.hegemol.taube.broker.service;
 
+import org.hegemol.taube.common.model.MessageModel;
+
 /**
  * Broker服务接口.
  *
@@ -8,17 +10,10 @@ package org.hegemol.taube.broker.service;
 public interface BrokerService {
 
     /**
-     * Topic创建
+     * 处理请求
      *
-     * @param topic
+     * @param model 请求模型
+     * @return
      */
-    void createTopic(String topic);
-
-    /**
-     * 消息发送
-     *
-     * @param topic 主题
-     * @param data  数据
-     */
-    void sendMessage(String topic, String data);
+    MessageModel invoke(MessageModel model);
 }
