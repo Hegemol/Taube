@@ -1,4 +1,4 @@
-package org.hegemol.taube.core.heartbeat;
+package org.hegemol.taube.broker.netty.heartbeat;
 
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;

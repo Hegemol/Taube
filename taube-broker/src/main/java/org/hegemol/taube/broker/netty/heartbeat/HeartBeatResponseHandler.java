@@ -1,4 +1,4 @@
-package org.hegemol.taube.core.heartbeat;
+package org.hegemol.taube.broker.netty.heartbeat;
 
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
@@ -17,8 +17,8 @@ public class HeartBeatResponseHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        // TODO 心跳回应
         MessageModel responseModel = (MessageModel) msg;
+
         // CONSUMER心跳响应
         if (responseModel.getType().equals(MessageTypeEnum.CONSUMER_HEART_BEAT_RQEUEST)){
             ReferenceCountUtil.release(msg);
