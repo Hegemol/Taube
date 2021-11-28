@@ -11,18 +11,14 @@
 
     <artifactId>taube-broker</artifactId>
 
+    <packaging>jar</packaging>
+
     <dependencies>
 
         <dependency>
             <groupId>org.hegemol.taube</groupId>
             <artifactId>taube-core</artifactId>
             <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
