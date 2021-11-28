@@ -40,6 +40,9 @@ public class TaubeProducer {
         if (Objects.isNull(message.getData())) {
             message.setData("");
         }
+        if (Objects.isNull(message.getMsgId())){
+            message.setMsgId(System.currentTimeMillis());
+        }
         // 初始化消息状态
         message.setStatus(TaubeMessageStatusEnum.NEW);
     }
