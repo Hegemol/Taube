@@ -1,4 +1,4 @@
-package org.hegemol.taube.broker.netty.codec;
+package org.hegemol.taube.core.netty.codec;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -6,8 +6,6 @@ import io.netty.handler.codec.MessageToByteEncoder;
 import org.hegemol.taube.common.model.MessageModel;
 import org.hegemol.taube.core.marshalling.MessageMarshalling;
 import org.hegemol.taube.core.marshalling.kryo.KryoMessageMarshalling;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * 消息相应编码器
@@ -27,7 +25,7 @@ import org.slf4j.LoggerFactory;
  **/
 public class MessageEncoder extends MessageToByteEncoder<MessageModel> {
 
-    private static final Logger logger = LoggerFactory.getLogger(MessageEncoder.class);
+//    private static final Logger logger = LoggerFactory.getLogger(MessageEncoder.class);
 
     @Override
     protected void encode(ChannelHandlerContext channelHandlerContext, MessageModel object, ByteBuf byteBuf) throws Exception {

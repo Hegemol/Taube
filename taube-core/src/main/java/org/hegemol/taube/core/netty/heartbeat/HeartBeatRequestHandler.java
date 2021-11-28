@@ -1,10 +1,9 @@
-package org.hegemol.taube.broker.netty.heartbeat;
+package org.hegemol.taube.core.netty.heartbeat;
 
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.ReferenceCountUtil;
-import lombok.extern.slf4j.Slf4j;
 import org.hegemol.taube.common.enums.MessageTypeEnum;
 import org.hegemol.taube.common.model.MessageModel;
 
@@ -14,7 +13,6 @@ import org.hegemol.taube.common.model.MessageModel;
  * @author KevinClair
  **/
 @ChannelHandler.Sharable
-@Slf4j
 public class HeartBeatRequestHandler extends ChannelInboundHandlerAdapter {
 
     @Override

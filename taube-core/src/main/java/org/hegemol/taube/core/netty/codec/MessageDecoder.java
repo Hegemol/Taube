@@ -1,9 +1,8 @@
-package org.hegemol.taube.broker.netty.codec;
+package org.hegemol.taube.core.netty.codec;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
-import lombok.extern.slf4j.Slf4j;
 import org.hegemol.taube.common.model.MessageModel;
 import org.hegemol.taube.core.marshalling.MessageMarshalling;
 import org.hegemol.taube.core.marshalling.kryo.KryoMessageMarshalling;
@@ -15,7 +14,6 @@ import java.util.List;
  *
  * @author KevinClair
  **/
-@Slf4j
 public class MessageDecoder extends ByteToMessageDecoder {
 
     @Override
