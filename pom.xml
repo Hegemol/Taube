@@ -29,7 +29,6 @@
 
         <netty-all.version>4.1.42.Final</netty-all.version>
         <lombok.version>1.18.22</lombok.version>
-        <jboss-marshalling.version>1.4.10.Final</jboss-marshalling.version>
         <commons-lang3.version>3.11</commons-lang3.version>
         <spring-boot.version>2.4.3</spring-boot.version>
         <kryo.version>4.0.2</kryo.version>
@@ -37,6 +36,9 @@
 
         <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+
+        <mysql.version>8.0.29</mysql.version>
+        <mybatis-spring-boot-starter.version>2.2.2</mybatis-spring-boot-starter.version>
     </properties>
 
     <developers>
@@ -76,18 +78,6 @@
             </dependency>
 
             <dependency>
-                <groupId>org.jboss.marshalling</groupId>
-                <artifactId>jboss-marshalling</artifactId>
-                <version>${jboss-marshalling.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.jboss.marshalling</groupId>
-                <artifactId>jboss-marshalling-serial</artifactId>
-                <version>${jboss-marshalling.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
@@ -97,14 +87,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-autoconfigure</artifactId>
                 <version>${spring-boot.version}</version>
-                <scope>provided</scope>
             </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring-boot.version}</version>
-                <scope>provided</scope>
             </dependency>
 
             <dependency>
@@ -117,6 +105,18 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot-starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
