@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  *
  * @author KevinClair
  **/
-@Component
+//@Component
 public class TaubeBroker implements InitializingBean, DisposableBean {
 
     private NettyServer nettyServer;

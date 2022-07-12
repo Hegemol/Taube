@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class ProducerBrokerServiceImpl implements BrokerService {
 
-    private final TopicService topicService;
+//    private final TopicService topicService;
 
     @Override
     public MessageModel invoke(final MessageModel model) {

@@ -30,7 +30,7 @@ import java.util.Objects;
  * @author KevinClair
  **/
 @Slf4j
-@Component
+//@Component
 public class NettyServer implements DisposableBean {
 
     private TaubeBrokerConfigurationProperty brokerConfigurationProperty;
