@@ -1,4 +1,4 @@
-package org.hegemol.taube.core.service;
+package org.hegemol.taube.broker.service;
 
 /**
  * Topic处理

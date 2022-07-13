@@ -1,6 +1,6 @@
-package org.hegemol.taube.core.service.impl;
+package org.hegemol.taube.broker.service.impl;
 
-import org.hegemol.taube.core.service.TopicService;
+import org.hegemol.taube.broker.service.TopicService;
 import org.springframework.stereotype.Service;
 
 /**
