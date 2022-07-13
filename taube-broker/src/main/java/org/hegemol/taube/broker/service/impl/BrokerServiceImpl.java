@@ -2,9 +2,8 @@ package org.hegemol.taube.broker.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.hegemol.taube.broker.service.BrokerService;
-import org.hegemol.taube.common.enums.MessageTypeEnum;
 import org.hegemol.taube.common.model.MessageModel;
-import org.hegemol.taube.core.service.TopicService;
+import org.hegemol.taube.broker.service.TopicService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,11 +11,11 @@ import org.springframework.stereotype.Service;
  *
  * @author KevinClair
  **/
-@Service("producer")
 @RequiredArgsConstructor
-public class ProducerBrokerServiceImpl implements BrokerService {
+@Service
+public class BrokerServiceImpl implements BrokerService {
 
-//    private final TopicService topicService;
+    private final TopicService topicService;
 
     @Override
     public MessageModel invoke(final MessageModel model) {
