@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author KevinClair
  **/
-public class TaubeProducer {
+public class TaubeTemplate {
 
     /**
      * 发送消息
