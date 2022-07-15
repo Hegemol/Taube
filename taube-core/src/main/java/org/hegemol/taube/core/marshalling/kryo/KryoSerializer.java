@@ -5,18 +5,18 @@ import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
 import com.esotericsoftware.kryo.pool.KryoPool;
 import org.hegemol.taube.common.model.MessageModel;
-import org.hegemol.taube.core.marshalling.MessageMarshalling;
+import org.hegemol.taube.core.marshalling.Serializer;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-public class KryoMessageMarshalling implements MessageMarshalling {
+public class KryoSerializer implements Serializer {
 
     private KryoPool pool = KryoPoolFactory.getKryoPoolInstance();
 
     @Override
-    public byte[] marshalling(final Object object) throws Exception {
+    public byte[] serialize(final Object object) throws Exception {
         Kryo kryo = pool.borrow();
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         Output out = new Output(byteArrayOutputStream);
@@ -37,7 +37,7 @@ public class KryoMessageMarshalling implements MessageMarshalling {
     }
 
     @Override
-    public MessageModel unmarshalling(final byte[] data) throws Exception {
+    public MessageModel deserialize(final byte[] data) throws Exception {
         Kryo kryo = pool.borrow();
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(data);
         Input in = new Input(byteArrayInputStream);

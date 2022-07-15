@@ -8,7 +8,7 @@ import org.hegemol.taube.common.model.MessageModel;
  *
  * @author KevinClair
  */
-public interface MessageMarshalling {
+public interface Serializer {
 
     /**
      * 编组请求
@@ -17,7 +17,7 @@ public interface MessageMarshalling {
      * @return 请求字节数组
      * @throws Exception
      */
-    byte[] marshalling(Object object) throws Exception;
+    byte[] serialize(Object object) throws Exception;
 
     /**
      * 解组
@@ -26,5 +26,5 @@ public interface MessageMarshalling {
      * @return {@link Object} // TODO 消息格式
      * @throws Exception
      */
-    MessageModel unmarshalling(byte[] data) throws Exception;
+    MessageModel deserialize(byte[] data) throws Exception;
 }

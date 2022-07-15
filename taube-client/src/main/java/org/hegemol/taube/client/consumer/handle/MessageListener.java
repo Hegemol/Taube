@@ -7,14 +7,15 @@ import org.hegemol.taube.client.common.model.MessageResult;
  *
  * @author KevinClair
  **/
-public interface TaubeConsumer {
+public interface MessageListener<T> {
 
     /**
      * 消息消费。
      *
      * @param data 消息内容
      * @return 消费状态 {@link MessageResult}
+     *
      * @throws Exception
      */
-    MessageResult message(Object data) throws Exception;
+    MessageResult onMessage(T data) throws Exception;
 }
