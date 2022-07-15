@@ -21,4 +21,11 @@ public @interface TaubeListener {
      * @return 主题
      */
     String topic();
+
+    /**
+     * 主题的tag
+     *
+     * @return
+     */
+    String tag() default "";
 }
