@@ -4,8 +4,8 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
 import org.hegemol.taube.common.model.MessageModel;
-import org.hegemol.taube.core.marshalling.MessageMarshalling;
-import org.hegemol.taube.core.marshalling.kryo.KryoMessageMarshalling;
+import org.hegemol.taube.core.marshalling.Serializer;
+import org.hegemol.taube.core.marshalling.kryo.KryoSerializer;
 
 /**
  * 消息相应编码器
@@ -30,8 +30,8 @@ public class MessageEncoder extends MessageToByteEncoder<MessageModel> {
     @Override
     protected void encode(ChannelHandlerContext channelHandlerContext, MessageModel object, ByteBuf byteBuf) throws Exception {
         // 序列化方法
-        MessageMarshalling marshalling = new KryoMessageMarshalling();
-        byte[] request = marshalling.marshalling(object);
+        Serializer marshalling = new KryoSerializer();
+        byte[] request = marshalling.serialize(object);
         byteBuf.writeInt(request.length);
         byteBuf.writeBytes(request);
     }

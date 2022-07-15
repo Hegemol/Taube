@@ -4,8 +4,8 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
 import org.hegemol.taube.common.model.MessageModel;
-import org.hegemol.taube.core.marshalling.MessageMarshalling;
-import org.hegemol.taube.core.marshalling.kryo.KryoMessageMarshalling;
+import org.hegemol.taube.core.marshalling.Serializer;
+import org.hegemol.taube.core.marshalling.kryo.KryoSerializer;
 
 import java.util.List;
 
@@ -33,8 +33,8 @@ public class MessageDecoder extends ByteToMessageDecoder {
         }
         byte[] bytes = new byte[bytesSize];
         byteBuf.readBytes(bytes);
-        MessageMarshalling marshalling = new KryoMessageMarshalling();
-        final MessageModel message = marshalling.unmarshalling(bytes);
+        Serializer marshalling = new KryoSerializer();
+        final MessageModel message = marshalling.deserialize(bytes);
         list.add(message);
     }
 }
