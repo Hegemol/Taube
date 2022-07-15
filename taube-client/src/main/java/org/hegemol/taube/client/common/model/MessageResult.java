@@ -5,20 +5,11 @@ package org.hegemol.taube.client.common.model;
  *
  * @author KevinClair
  **/
-public class MessageResult {
+public enum MessageResult {
 
-    // code
-    public static final String SUCCESS_STATUS = "SUCCESS";
-    public static final String FAIL_STATUS = "FAIL";
+    // 成功
+    SUCCESS(),
 
-    // result
-    public static final MessageResult SUCCESS = new MessageResult(SUCCESS_STATUS);
-    public static final MessageResult FAIL = new MessageResult(FAIL_STATUS);
-
-    // status.
-    private String status;
-
-    public MessageResult(final String status) {
-        this.status = status;
-    }
+    // 失败
+    FAIL();
 }
