@@ -14,36 +14,26 @@ import java.util.Objects;
 public class TaubeTemplate {
 
     /**
-     * 发送消息
+     * 同步发送消息
      *
-     * @param message 消息体.
+     * @param topic     主题
+     * @param tag       主题tag
+     * @param messageId 消息id
+     * @param data      消息内容
      */
-    public static void send(Message message){
+    public static void send(String topic, String tag, Long messageId, Object data){
         // 校验消息
-        validMessage(message);
-
+        if (StringUtils.isBlank(topic)) {
+            throw new IllegalArgumentException("Topic can not be null.");
+        }
+        Message message = new Message();
+        if (StringUtils.isNoneBlank(tag)){
+            message.setTag(tag);
+        }
+        if (Objects.nonNull(messageId)){
+            message.setMsgId(messageId);
+        }
+        message.setData(data);
         // TODO 发送消息
-    }
-
-    /**
-     * 消息体校验.
-     *
-     * @param message 消息体.
-     */
-    private static void validMessage(final Message message) {
-        if (Objects.isNull(message)) {
-            throw new IllegalArgumentException("Message can not be null.");
-        }
-        if (StringUtils.isBlank(message.getTopic())){
-            throw new IllegalArgumentException("Message's topic can not be null.");
-        }
-        if (Objects.isNull(message.getData())) {
-            message.setData("");
-        }
-        if (Objects.isNull(message.getMsgId())){
-            message.setMsgId(System.currentTimeMillis());
-        }
-        // 初始化消息状态
-        message.setStatus(TaubeMessageStatusEnum.NEW);
     }
 }
