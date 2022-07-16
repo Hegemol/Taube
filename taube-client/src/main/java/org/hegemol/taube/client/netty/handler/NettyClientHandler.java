@@ -20,7 +20,7 @@ public class NettyClientHandler extends SimpleChannelInboundHandler<MessageModel
     private volatile Channel channel;
 
     @Override
-    public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
+    public void channelActive(final ChannelHandlerContext ctx) throws Exception {
         this.channel = ctx.channel();
     }
 
@@ -30,6 +30,6 @@ public class NettyClientHandler extends SimpleChannelInboundHandler<MessageModel
     }
 
     public void invoke(MessageModel messageModel){
-        // TODO 请求服务端
+
     }
 }
