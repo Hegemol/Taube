@@ -16,12 +16,33 @@ public class TaubeTemplate {
     /**
      * 同步发送消息
      *
+     * @param topic 消息主题
+     * @param data  消息内容
+     */
+    public void send(String topic, Object data){
+        this.send(topic, "", System.currentTimeMillis(), data);
+    }
+
+    /**
+     * 同步发送消息
+     *
+     * @param topic     消息主题
+     * @param messageId 消息id
+     * @param data      消息内容
+     */
+    public void send(String topic, Long messageId, Object data){
+        this.send(topic, "", messageId, data);
+    }
+
+    /**
+     * 同步发送消息
+     *
      * @param topic     主题
      * @param tag       主题tag
      * @param messageId 消息id
      * @param data      消息内容
      */
-    public static void send(String topic, String tag, Long messageId, Object data){
+    public void send(String topic, String tag, Long messageId, Object data){
         // 校验消息
         if (StringUtils.isBlank(topic)) {
             throw new IllegalArgumentException("Topic can not be null.");
