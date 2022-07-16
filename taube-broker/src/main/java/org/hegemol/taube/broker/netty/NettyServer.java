@@ -11,6 +11,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import io.netty.handler.timeout.IdleStateHandler;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.hegemol.taube.broker.config.TaubeBrokerConfigurationProperty;
@@ -31,22 +32,18 @@ import java.util.Objects;
  **/
 @Slf4j
 @Component
+@RequiredArgsConstructor
 public class NettyServer implements DisposableBean {
 
-    private TaubeBrokerConfigurationProperty brokerConfigurationProperty;
+    private final TaubeBrokerConfigurationProperty brokerConfigurationProperty;
 
-    private NettyServerHandler nettyServerHandler;
+    private final NettyServerHandler nettyServerHandler;
 
     private Channel channel;
 
     private EventLoopGroup bossGroup;
 
     private EventLoopGroup workerGroup;
-
-    public NettyServer(final TaubeBrokerConfigurationProperty brokerConfigurationProperty, final NettyServerHandler nettyServerHandler) {
-        this.brokerConfigurationProperty = brokerConfigurationProperty;
-        this.nettyServerHandler = nettyServerHandler;
-    }
 
     /**
      * Netty服务端启动
