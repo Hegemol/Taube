@@ -18,6 +18,10 @@
     </sql>
 
     <select id="select" resultMap="Topic">
-        select <include refid="Base_Column_List" /> from topic t;
+        SELECT <include refid="Base_Column_List" /> FROM topic t;
     </select>
+
+    <insert id="insert">
+        INSERT INTO topic (name) VALUES (#{name});
+    </insert>
 </mapper>

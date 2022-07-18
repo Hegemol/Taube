@@ -13,5 +13,18 @@ import java.util.List;
 @Mapper
 public interface TopicMapper {
 
+    /**
+     * 查询
+     *
+     * @return
+     */
     List<Topic> select();
+
+    /**
+     * 插入一条数据
+     *
+     * @param topic 数据库model {@link Topic}
+     * @return 插入成功的条数
+     */
+    int insert(Topic topic);
 }
